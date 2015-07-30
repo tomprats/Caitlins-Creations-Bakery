@@ -1,0 +1,119 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "variables";
+@import "font-awesome";
+@import url(http://fonts.googleapis.com/css?family=Bilbo);
+@import url(http://fonts.googleapis.com/css?family=EB+Garamond);
+
+*, :before, :after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  font-family: "EB Garamond", serif;
+}
+
+h1 {
+  font-family: "Bilbo", cursive;
+  font-weight: normal;
+  font-size: 4em;
+}
+
+h2 {
+  font-family: "Bilbo", cursive;
+  font-weight: normal;
+  font-size: 3em;
+  text-align: center;
+}
+
+a {
+  color: white;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.img-responsive {
+  max-width: 100%;
+}
+
+.row {
+  &:before, &:after {
+    display: table;
+    content: " ";
+    clear: both;
+  }
+}
+
+.love-link {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  color: green;
+  a { color: green; }
+}
+
+@media screen and (max-width: $lg-min) {
+  .love-link {
+    position: static;
+    text-align: center;
+  }
+}
+
+.col-md-offset-1,
+.col-md-offset-2,
+.col-md-offset-3,
+.col-md-4,
+.col-md-6,
+.col-md-10,
+.col-md-12 {
+  float: left;
+  width: 100%;
+  padding: 10px;
+  margin-left: 0px;
+}
+
+@media screen and (min-width: $md-min) {
+  .col-md-12 {
+    width: percentage(12/12);
+  }
+  .col-md-10 {
+    width: percentage(10/12);
+  }
+  .col-md-8 {
+    width: percentage(8/12);
+  }
+  .col-md-6 {
+    width: percentage(6/12);
+  }
+  .col-md-4 {
+    width: percentage(4/12);
+  }
+  .col-md-offset-3 {
+    margin-left: percentage(3/12);
+  }
+  .col-md-offset-2 {
+    margin-left: percentage(2/12);
+  }
+  .col-md-offset-1 {
+    margin-left: percentage(1/12);
+  }
+}
