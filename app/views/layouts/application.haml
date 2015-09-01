@@ -1,9 +1,20 @@
 <!DOCTYPE html>
 %html
   %head
-    %title Caitlin's Creations Bakery
+    - title = "Caitlin's Creations Bakery"
+    - description = "I am an at home baker specializing in cupcakes and cookies"
+
+    %title= title
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
+
+    %meta(name="description" content="#{description}")
+    %meta(property="og:title" content="#{title}")
+    %meta(property="og:site_name" content="#{title}")
+    %meta(property="og:url" content="#{request.url}")
+    %meta(property="og:description" content="#{description}")
+    %meta(property="og:image" content="#{image_url "monster.jpg"}")
+
     = csrf_meta_tags
   %body
     = yield
